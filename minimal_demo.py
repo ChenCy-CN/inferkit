@@ -9,7 +9,7 @@ model = AutoModelForCausalLM.from_pretrained(
     device_map="auto"
 )
 
-prompt = "帮我写一句表达爱'许敬婕'的藏头诗,注意要用七言律诗，爱许敬婕必须在每一句的开头"
+prompt = "你好介绍下自己"
 messages = [{"role": "user", "content": prompt}]
 text = tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
 model_inputs = tokenizer([text], return_tensors="pt").to(model.device)
